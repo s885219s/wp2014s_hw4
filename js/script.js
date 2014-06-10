@@ -18,12 +18,15 @@ FB.getLoginStatus(function(response) {
     //呼叫api把圖片放到#preview IMG tag 內
     console.log("user is logged in and has authenticated your app");
     var uid = response.authResponse.userID;
-    window.authToken = response.authResponse.accessToken;
+    authToken = response.authResponse.accessToken;
     console.log(authToken);
         FB.api('/me/picture?type=large', function (response) {
         console.log(response),
         $("#preview1").attr("src", response.data.url);
     });
+    FB.api('/me', {fields: 'last_name'}, function(response) {
+            console.log(response);
+        });
     
   } else if (response.status === 'not_authorized') {
     //要求使用者登入，索取publish_actions權限
