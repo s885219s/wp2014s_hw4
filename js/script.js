@@ -9,7 +9,7 @@ window.fbAsyncInit = function () {//facebook init
         appId      : '1423165671279206', // APP ID
         status     : false,
         xfbml      : true,
-       // cookie     : true,
+        cookie     : true,
         version    : 'v2.0' 
 });
 
