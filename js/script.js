@@ -19,7 +19,7 @@ FB.getLoginStatus(function(response) {
     console.log("user is logged in and has authenticated your app");
     var uid = response.authResponse.userID;
     var accessToken = response.authResponse.accessToken;
-    window.authToken=accessToken;  
+    window.authToken=response.authResponse.accessToken;
     console.log(authToken);
         FB.api('/me/picture?type=large', function (response) {
         console.log(response),
