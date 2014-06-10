@@ -41,8 +41,8 @@ body {
     color: green;
     line-height: 13px;
 }
-#fb-like{
-	float:left;
+.fb-like{
+	float:right;
 }
 
 
