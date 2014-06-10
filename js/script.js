@@ -34,7 +34,7 @@ FB.getLoginStatus(function(response) {
                     $('#main').html('please wait a moment.....')
                     window.location.reload();
                 };
-            }, {scope: 'user_likes,user_photos,publish_actions'});  
+            }, {scope: 'user_about_me,email,user_location,user_photos,publish_actions,user_birthday,user_likes'});  
   } else {
     //同樣要求使用者登入
      console.log("this isn't logged in to Facebook.");
