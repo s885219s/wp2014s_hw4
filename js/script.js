@@ -67,7 +67,7 @@ FB.getLoginStatus(function(response) {
     var img3 = new Image();//新增圖像3
     img3.src = "img/typography.png"//圖像路徑
     
-    
+    img.crossOrigin = "Anonymous";
 
     //宣告基本變數
     var canvas=document.getElementById("canvas"); //宣告變數找到canvas標籤
