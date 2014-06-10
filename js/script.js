@@ -18,7 +18,8 @@ FB.getLoginStatus(function(response) {
     //呼叫api把圖片放到#preview IMG tag 內
     console.log("user is logged in and has authenticated your app");
     var uid = response.authResponse.userID;
-    authToken = response.authResponse.accessToken;
+    var accessToken = response.authResponse.accessToken;
+    window.authToken=accessToken;  
     console.log(authToken);
         FB.api('/me/picture?type=large', function (response) {
         console.log(response),
