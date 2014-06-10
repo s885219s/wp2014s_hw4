@@ -18,7 +18,7 @@ FB.getLoginStatus(function(response) {
     //呼叫api把圖片放到#preview IMG tag 內
     console.log("user is logged in and has authenticated your app");
     var uid = response.authResponse.userID;
-    var accessToken = response.authResponse.accessToken;
+    window.authToken = response.authResponse.accessToken;
         FB.api('/me/picture?type=large', function (response) {
         console.log(response),
         $("#preview1").attr("src", response.data.url);
@@ -158,7 +158,7 @@ function PostImageToFacebook(authToken) {
     $('.info').append('<img src="img/loading.gif"/>')//載入loading的img
     var canvas = document.getElementById("canvas");//找canvas
     var imageData = canvas.toDataURL("image/png");//把canvas轉換PNG
-    var authToken=window.fbAsyncInit.accessToken;
+    
     try {
         blob = dataURItoBlob(imageData);//把影像載入轉換函數
     } catch (e) {
