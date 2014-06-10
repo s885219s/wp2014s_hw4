@@ -1,7 +1,7 @@
 /*
 這檔案協助你編寫JS，請注意每個code block的使用，若你對自己的javascript很有信心，或是你認為我寫的方式有bug，歡迎自行修改編排
 */
-var authToken;
+
 window.fbAsyncInit = function () {//facebook init
     
 //輸入基本的Facebook init的狀態，與Facebook 連接，包括APP ID的設定
@@ -19,7 +19,6 @@ FB.getLoginStatus(function(response) {
     console.log("user is logged in and has authenticated your app");
     var uid = response.authResponse.userID;
     var accessToken = response.authResponse.accessToken;
-    authToken=accessToken;
         FB.api('/me/picture?type=large', function (response) {
         console.log(response),
         $("#preview1").attr("src", response.data.url);
@@ -159,6 +158,7 @@ function PostImageToFacebook(authToken) {
     $('.info').append('<img src="img/loading.gif"/>')//載入loading的img
     var canvas = document.getElementById("canvas");//找canvas
     var imageData = canvas.toDataURL("image/png");//把canvas轉換PNG
+    var authToken=window.accessToken;
     try {
         blob = dataURItoBlob(imageData);//把影像載入轉換函數
     } catch (e) {
